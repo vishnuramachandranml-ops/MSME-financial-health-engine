@@ -24,3 +24,25 @@ class Operations(AppBaseModel):
         ge=0,
         le=1,
     )
+
+    capacity_utilization: float | None = Field(
+        default=None,
+        ge=0,
+        le=1,
+    )
+
+    inventory_turnover: float | None = Field(
+        default=None,
+        ge=0,
+    )
+
+    order_fulfillment_rate: float | None = Field(
+        default=None,
+        ge=0,
+        le=1,
+    )
+
+    employee_productivity: float | None = Field(
+        default=None,
+        ge=0,
+    )

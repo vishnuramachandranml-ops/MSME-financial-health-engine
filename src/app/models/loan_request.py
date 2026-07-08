@@ -18,6 +18,10 @@ class Collateral(AppBaseModel):
 
 
 class LoanRequest(AppBaseModel):
+    """
+    Loan request information.
+    """
+
     loan_type: LoanType
 
     requested_amount: float = Field(
@@ -31,5 +35,15 @@ class LoanRequest(AppBaseModel):
     )
 
     loan_purpose: str
+
+    existing_loan_amount: float | None = Field(
+        default=None,
+        ge=0,
+    )
+
+    existing_emi: float | None = Field(
+        default=None,
+        ge=0,
+    )
 
     collateral: Collateral | None = None

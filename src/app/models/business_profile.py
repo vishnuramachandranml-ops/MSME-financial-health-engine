@@ -34,29 +34,30 @@ class BusinessProfile(AppBaseModel):
         examples=["Private Limited"],
     )
 
+    msme_registered: bool = Field(
+        default=True,
+        description="Whether the business is registered as an MSME.",
+    )
+
+    udyam_registration_number: str | None = Field(
+        default=None,
+        description="Official Udyam registration number.",
+    )
+
     business_age_years: int = Field(
         ...,
         ge=0,
         le=100,
-        description="Age of business in years",
-        examples=[8],
     )
 
     employee_count: int = Field(
         ...,
         ge=0,
-        description="Total employees",
-        examples=[42],
     )
 
     annual_turnover: float = Field(
         ...,
         ge=0,
-        description="Annual turnover (INR)",
-        examples=[25000000],
     )
 
-    location: str = Field(
-        ...,
-        examples=["Hosur, Tamil Nadu"],
-    )
+    location: str
