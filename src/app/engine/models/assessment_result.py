@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pydantic import Field
+from pydantic import Field, model_validator
 
 from app.models.base import AppBaseModel
 
@@ -18,6 +18,11 @@ class AssessmentResult(AppBaseModel):
     """
 
     component: ComponentScore
+
+    component_scores: list[ComponentScore] = Field(
+        default_factory=list,
+        description="Scores for all assessed components.",
+    )
 
     metrics: list[MetricResult] = Field(
         default_factory=list,
@@ -43,3 +48,11 @@ class AssessmentResult(AppBaseModel):
         default_factory=list,
         description="Warnings generated during assessment.",
     )
+
+    @model_validator(mode="after")
+    def populate_component_scores(self):
+        if not self.component_scores:
+            self.component_scores = [
+                self.component,
+            ]
+        return self

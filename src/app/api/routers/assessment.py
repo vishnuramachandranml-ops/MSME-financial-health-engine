@@ -41,9 +41,7 @@ async def assess(
         request_id=request.metadata.request_id,
         status=AssessmentStatus.SUCCESS,
         summary=summary,
-        component_scores=[
-            result.component,
-        ],
+        component_scores=result.component_scores,
         positive_signals=result.positive_signals,
         negative_signals=result.negative_signals,
         warnings=result.warnings,
