@@ -18,7 +18,6 @@ router = APIRouter(
 # Create once at application startup
 pipeline = AssessmentPipeline()
 
-print(AssessmentResponse.model_fields.keys())
 @router.post(
     "",
     response_model=AssessmentResponse,
