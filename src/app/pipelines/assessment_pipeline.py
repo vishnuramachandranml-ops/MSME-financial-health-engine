@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+from app.engine.assessors.compliance.assessor import ComplianceAssessor
 from app.engine.assessors.cashflow.assessor import CashFlowAssessor
 from app.engine.assessors.financial_position.assessor import (
     FinancialPositionAssessor,
+)
+from app.engine.feature_engineering.compliance.engineer import (
+    ComplianceFeatureEngineer,
 )
 from app.engine.feature_engineering.cashflow.engineer import CashFlowFeatureEngineer
 from app.engine.feature_engineering.financial_position.engineer import (
@@ -25,6 +29,8 @@ class AssessmentPipeline:
         self._cashflow_assessor = CashFlowAssessor()
         self._financial_position_engineer = FinancialPositionFeatureEngineer()
         self._financial_position_assessor = FinancialPositionAssessor()
+        self._compliance_engineer = ComplianceFeatureEngineer()
+        self._compliance_assessor = ComplianceAssessor()
 
     def assess(
         self,
@@ -55,6 +61,17 @@ class AssessmentPipeline:
             results.append(
                 self._financial_position_assessor.assess(
                     financial_position_features
+                )
+            )
+
+        if request.compliance is not None:
+            compliance_features = self._compliance_engineer.transform(
+                request.compliance
+            )
+
+            results.append(
+                self._compliance_assessor.assess(
+                    compliance_features
                 )
             )
 
