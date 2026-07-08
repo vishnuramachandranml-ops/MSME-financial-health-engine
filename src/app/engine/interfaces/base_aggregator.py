@@ -1,10 +1,21 @@
+from __future__ import annotations
 
-    exceptions/
+from abc import ABC, abstractmethod
+from typing import Generic, TypeVar
 
-        __init__.py
+from app.engine.models.assessment_result import AssessmentResult
 
-        assessor_exceptions.py
+FeatureType = TypeVar("FeatureType")
 
-        aggregation_exceptions.py
 
-        feature_engineering_exceptions.py
+class BaseAssessor(ABC, Generic[FeatureType]):
+    """
+    Base class for all assessors.
+    """
+
+    @abstractmethod
+    def assess(self, features: FeatureType) -> AssessmentResult:
+        """
+        Assess a business dimension.
+        """
+        raise NotImplementedError
