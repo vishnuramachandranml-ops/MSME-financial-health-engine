@@ -11,5 +11,5 @@ uv sync
 Run
 
 ```bash
-uvicorn app.main:app --reload
+uv run uvicorn --app-dir src app.main:app --reload
 ```
