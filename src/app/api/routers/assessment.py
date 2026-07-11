@@ -7,6 +7,9 @@ from app.models.assessment_response import (
     AssessmentResponse,
     AssessmentSummary,
 )
+from app.engine.recommendations.recommendation_engine import (
+    RecommendationEngine,
+)
 from app.models.enums import AssessmentStatus
 from app.pipelines.assessment_pipeline import AssessmentPipeline
 from app.engine.risk.risk_classifier import RiskClassifier
@@ -32,6 +35,10 @@ async def assess(
 
     result = pipeline.assess(request)
 
+    recommendations = RecommendationEngine.generate(
+        result
+    )
+
     summary = AssessmentSummary(
         financial_health_score=result.component.score,
         confidence_score=result.component.confidence,
@@ -47,5 +54,6 @@ async def assess(
         component_scores=result.component_scores,
         positive_signals=result.positive_signals,
         negative_signals=result.negative_signals,
+        recommendations=recommendations,
         warnings=result.warnings,
     )

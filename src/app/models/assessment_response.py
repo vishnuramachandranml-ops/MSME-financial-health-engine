@@ -35,3 +35,7 @@ class AssessmentResponse(AppBaseModel):
     warnings: list[str] = Field(
         default_factory=list
     )
+
+    recommendations: list[str] = Field(
+    default_factory=list,
+    )
