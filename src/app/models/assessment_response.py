@@ -5,6 +5,8 @@ from pydantic import Field
 from app.models.base import AppBaseModel
 from app.models.enums import AssessmentStatus, RiskLevel
 from app.engine.models.component_score import ComponentScore
+from app.llm.models import LLMAnalysis
+
 
 
 class AssessmentSummary(AppBaseModel):
@@ -39,3 +41,5 @@ class AssessmentResponse(AppBaseModel):
     recommendations: list[str] = Field(
     default_factory=list,
     )
+
+    llm_analysis: LLMAnalysis | None = None

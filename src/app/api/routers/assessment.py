@@ -7,12 +7,14 @@ from app.models.assessment_response import (
     AssessmentResponse,
     AssessmentSummary,
 )
+
 from app.engine.recommendations.recommendation_engine import (
     RecommendationEngine,
 )
 from app.models.enums import AssessmentStatus
 from app.pipelines.assessment_pipeline import AssessmentPipeline
 from app.engine.risk.risk_classifier import RiskClassifier
+from app.llm.summary_service import SummaryService
 
 router = APIRouter(
     prefix="/assessment",
@@ -34,17 +36,25 @@ async def assess(
     """
 
     result = pipeline.assess(request)
+    risk_level = RiskClassifier.classify(
+        result.component.score
+    )
 
+    
     recommendations = RecommendationEngine.generate(
         result
     )
 
+    llm_analysis = SummaryService().summarize(
+        result=result,
+        risk_level=risk_level.value,
+        recommendations=recommendations,
+    )
+
     summary = AssessmentSummary(
         financial_health_score=result.component.score,
+        risk_level=risk_level,
         confidence_score=result.component.confidence,
-        risk_level=RiskClassifier.classify(
-            result.component.score
-        ),
     )
 
     return AssessmentResponse(
@@ -55,5 +65,6 @@ async def assess(
         positive_signals=result.positive_signals,
         negative_signals=result.negative_signals,
         recommendations=recommendations,
+        llm_analysis=llm_analysis,
         warnings=result.warnings,
     )
