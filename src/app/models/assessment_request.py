@@ -11,6 +11,14 @@ from app.models.compliance import Compliance
 from app.models.financial_position import FinancialPosition
 from app.models.loan_request import LoanRequest
 
+from pydantic import ConfigDict
+
+from app.examples.swagger_examples import (
+    HEALTHY_MANUFACTURING,
+    MEDIUM_RISK_MANUFACTURING,
+    HIGH_RISK_MANUFACTURING,
+    NEW_TO_CREDIT,
+)
 
 class AssessmentMetadata(AppBaseModel):
     """

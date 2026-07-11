@@ -6,8 +6,7 @@ from app.models.base import AppBaseModel
 from app.models.enums import AssessmentStatus, RiskLevel
 from app.engine.models.component_score import ComponentScore
 from app.llm.models import LLMAnalysis
-
-
+from app.models.component_breakdown import ComponentBreakdown
 
 class AssessmentSummary(AppBaseModel):
     financial_health_score: float | None = None
@@ -24,6 +23,10 @@ class AssessmentResponse(AppBaseModel):
 
     component_scores: list[ComponentScore] = Field(
         default_factory=list
+    )
+
+    component_breakdown: list[ComponentBreakdown] = Field(
+    default_factory=list,
     )
 
     positive_signals: list[str] = Field(

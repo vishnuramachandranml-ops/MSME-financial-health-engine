@@ -14,9 +14,23 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title=settings.app_name,
-    version=settings.app_version,
-    lifespan=lifespan,
+    title="AI Underwriter Copilot API",
+    description="""
+AI-powered MSME Financial Health Assessment Engine.
+
+Features:
+- Explainable Financial Health Score
+- Component-wise Risk Assessment
+- AI Executive Summary (Gemini)
+- Credit Recommendation
+- Alternate Data Evaluation
+- Explainable Metric Breakdown
+""",
+    version="1.0.0",
+    contact={
+        "name": "Team AI Underwriter",
+        "email": "team@example.com",
+    },
 )
 
 app.include_router(api_router)

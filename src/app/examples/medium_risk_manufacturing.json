@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "request_id": "REQ-002",
+    "source_system": "Swagger",
+    "model_version": "1.0"
+  },
+  "business_profile": {
+    "business_id": "MSME001",
+    "business_name": "Metro Engineering",
+    "industry": "MANUFACTURING",
+    "business_type": "Private Limited",
+    "msme_registered": true,
+    "udyam_registration_number": "UDYAM-XX-1234567",
+    "business_age_years": 10,
+    "employee_count": 50,
+    "annual_turnover": 25000000,
+    "location": "Coimbatore"
+  },
+  "cashflow": {
+    "monthly_revenue": {
+      "values": [
+        1000000,
+        1050000,
+        1100000,
+        1150000,
+        1200000,
+        1250000
+      ]
+    },
+    "monthly_expenses": {
+      "values": [
+        850000,
+        880000,
+        910000,
+        940000,
+        980000,
+        1020000
+      ]
+    },
+    "average_collection_days": 90,
+    "average_supplier_payment_days": 40
+  },
+  "operations": {
+    "monthly_sales_orders": {
+      "values": [
+        950000,
+        1000000,
+        1050000,
+        1100000,
+        1150000,
+        1200000
+      ]
+    },
+    "monthly_purchase_orders": {
+      "values": [
+        700000,
+        720000,
+        740000,
+        760000,
+        780000,
+        800000
+      ]
+    },
+    "vendor_count": 40,
+    "customer_count": 150,
+    "repeat_customer_ratio": 0.82,
+    "capacity_utilization": 0.88,
+    "inventory_turnover": 8,
+    "order_fulfillment_rate": 0.98,
+    "employee_productivity": 400000
+  },
+  "alternate_data": {
+    "gst_registered": true,
+    "gst_filing_rate": 1,
+    "gst_turnover": 24500000,
+    "upi_transaction_count": 6500,
+    "upi_transaction_volume": 9000000,
+    "average_bank_balance": 2500000,
+    "digital_payment_ratio": 0.85,
+    "positive_bank_statement_months": 12,
+    "online_rating": 4.7,
+    "electricity_units": {
+      "values": [
+        10000,
+        10100,
+        10200,
+        10400,
+        10500,
+        10700
+      ]
+    },
+    "fuel_expense": {
+      "values": [
+        150000,
+        152000,
+        154000,
+        156000,
+        158000,
+        160000
+      ]
+    }
+  },
+  "compliance": {
+    "gst_registered": true,
+    "gst_return_filing_rate": 1,
+    "itr_filed_last_3_years": true,
+    "epfo_registered": true,
+    "epfo_compliance_rate": 1,
+    "tax_payment_delay_days": 0,
+    "statutory_dues_pending": false,
+    "regulatory_notices": 0
+  },
+  "financial_position": {
+    "total_assets": 18000000,
+    "current_assets": 5000000,
+    "fixed_assets": 9000000,
+    "cash_and_bank": 2500000,
+    "inventory": 2800000,
+    "accounts_receivable": 1800000,
+    "total_liabilities": 7000000,
+    "current_liabilities": 4500000,
+    "long_term_debt": 2000000,
+    "net_worth": 11000000,
+    "book_value": 11000000,
+    "working_capital": 5000000
+  },
+  "loan_request": {
+    "loan_type": "WORKING_CAPITAL",
+    "requested_amount": 3000000,
+    "loan_tenure_months": 36,
+    "loan_purpose": "Working capital expansion",
+    "existing_loan_amount": 1000000,
+    "existing_emi": 45000,
+    "collateral": {
+      "available": true,
+      "collateral_type": "LAND",
+      "estimated_value": 10000000
+    }
+  }
+}

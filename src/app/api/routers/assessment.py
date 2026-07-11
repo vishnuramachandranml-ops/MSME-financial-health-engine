@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from fastapi import APIRouter
-
 from app.models.assessment_request import AssessmentRequest
 from app.models.assessment_response import (
     AssessmentResponse,
@@ -11,14 +9,26 @@ from app.models.assessment_response import (
 from app.engine.recommendations.recommendation_engine import (
     RecommendationEngine,
 )
+from app.models.component_breakdown import (
+    ComponentBreakdown,
+    MetricBreakdown,
+)
 from app.models.enums import AssessmentStatus
 from app.pipelines.assessment_pipeline import AssessmentPipeline
 from app.engine.risk.risk_classifier import RiskClassifier
 from app.llm.summary_service import SummaryService
+from fastapi import APIRouter, Body
+
+from app.examples.swagger_examples import (
+    HEALTHY_MANUFACTURING,
+    MEDIUM_RISK_MANUFACTURING,
+    NEW_TO_CREDIT,
+    HIGH_RISK_MANUFACTURING,
+)
 
 router = APIRouter(
     prefix="/assessment",
-    tags=["Assessment"],
+    tags=["FinancialAssessment"],
 )
 
 # Create once at application startup
@@ -27,10 +37,63 @@ pipeline = AssessmentPipeline()
 @router.post(
     "",
     response_model=AssessmentResponse,
+    summary="Assess MSME Financial Health",
+    description="""
+Performs an explainable financial health assessment for an MSME.
+
+Evaluates:
+• Cash Flow
+• Financial Position
+• Compliance
+• Operations
+• Alternate Data
+
+Returns:
+• Financial Health Score
+• Risk Classification
+• AI Executive Summary
+• Recommendations
+• Component Breakdown
+""",
+    responses={
+        200: {
+            "description": "Assessment completed successfully"
+        },
+        400: {
+            "description": "Invalid assessment request"
+        },
+        500: {
+            "description": "Internal server error"
+        },
+    },
 )
 async def assess(
-    request: AssessmentRequest,
-) -> AssessmentResponse:
+    request: AssessmentRequest = Body(
+        ...,
+            openapi_examples={
+        "healthy": {
+            "summary": "Healthy Manufacturing MSME",
+            "description": "Excellent financial health.",
+            "value": HEALTHY_MANUFACTURING,
+        },
+        "medium": {
+            "summary": "Medium Risk Manufacturing MSME",
+            "description": "Moderate liquidity concerns.",
+            "value": MEDIUM_RISK_MANUFACTURING,
+        },
+        "new_to_credit": {
+            "summary": "New-to-Credit MSME",
+            "description": "Limited credit history with strong alternate data.",
+            "value": NEW_TO_CREDIT,
+        },
+        "high": {
+            "summary": "High Risk Manufacturing MSME",
+            "description": "Weak financial position.",
+            "value": HIGH_RISK_MANUFACTURING,
+        },
+        },
+    ),
+):
     """
     Perform financial health assessment for an MSME.
     """
@@ -57,11 +120,52 @@ async def assess(
         confidence_score=result.component.confidence,
     )
 
+    component_breakdown = []
+
+    for assessment in result.component_assessments:
+
+        component_breakdown.append(
+
+            ComponentBreakdown(
+
+                component=assessment.component.name,
+
+                score=assessment.component.score,
+
+                confidence=assessment.component.confidence,
+
+                metrics=[
+
+                    MetricBreakdown(
+
+                        metric=metric.metric,
+
+                        value=metric.value,
+
+                        score=metric.score,
+
+                        weight=metric.weight,
+
+                    )
+
+                    for metric in assessment.metrics
+
+                ],
+
+                positive_signals=assessment.positive_signals,
+
+                negative_signals=assessment.negative_signals,
+
+            )
+
+        )
+
     return AssessmentResponse(
         request_id=request.metadata.request_id,
         status=AssessmentStatus.SUCCESS,
         summary=summary,
         component_scores=result.component_scores,
+        component_breakdown=component_breakdown,
         positive_signals=result.positive_signals,
         negative_signals=result.negative_signals,
         recommendations=recommendations,

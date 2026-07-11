@@ -7,6 +7,7 @@ from app.models.base import AppBaseModel
 from app.engine.evaluation.metric_result import MetricResult
 from app.engine.models.component_score import ComponentScore
 from app.engine.models.derived_features import DerivedFeatures
+from app.engine.models.component_assessment import ComponentAssessment
 
 
 class AssessmentResult(AppBaseModel):
@@ -22,6 +23,10 @@ class AssessmentResult(AppBaseModel):
     component_scores: list[ComponentScore] = Field(
         default_factory=list,
         description="Scores for all assessed components.",
+    )
+
+    component_assessments: list[ComponentAssessment] = Field(
+    default_factory=list,
     )
 
     metrics: list[MetricResult] = Field(
@@ -49,10 +54,27 @@ class AssessmentResult(AppBaseModel):
         description="Warnings generated during assessment.",
     )
 
+
     @model_validator(mode="after")
     def populate_component_scores(self):
+
         if not self.component_scores:
             self.component_scores = [
                 self.component,
             ]
+
+        if not self.component_assessments:
+
+            self.component_assessments = [
+
+                ComponentAssessment(
+                    component=self.component,
+                    metrics=self.metrics,
+                    positive_signals=self.positive_signals,
+                    negative_signals=self.negative_signals,
+                    warnings=self.warnings,
+                )
+
+            ]
+
         return self

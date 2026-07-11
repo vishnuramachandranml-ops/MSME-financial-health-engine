@@ -162,6 +162,11 @@ class AssessmentPipeline:
                 confidence=overall_confidence,
             ),
             component_scores=component_scores,
+            component_assessments=[
+                assessment
+                for result in results
+                for assessment in result.component_assessments
+            ],
             metrics=[
                 metric
                 for result in results
