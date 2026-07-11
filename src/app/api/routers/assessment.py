@@ -9,6 +9,7 @@ from app.models.assessment_response import (
 )
 from app.models.enums import AssessmentStatus
 from app.pipelines.assessment_pipeline import AssessmentPipeline
+from app.engine.risk.risk_classifier import RiskClassifier
 
 router = APIRouter(
     prefix="/assessment",
@@ -34,7 +35,9 @@ async def assess(
     summary = AssessmentSummary(
         financial_health_score=result.component.score,
         confidence_score=result.component.confidence,
-        risk_level="LOW",  # TODO: Replace with RiskAssessment module later
+        risk_level=RiskClassifier.classify(
+            result.component.score
+        ),
     )
 
     return AssessmentResponse(

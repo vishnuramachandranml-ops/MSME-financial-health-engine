@@ -1,0 +1,7 @@
+from __future__ import annotations
+
+LOW_RISK_THRESHOLD = 85.0
+
+MEDIUM_RISK_THRESHOLD = 70.0
+
+HIGH_RISK_THRESHOLD = 50.0
