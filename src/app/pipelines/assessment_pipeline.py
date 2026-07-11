@@ -12,6 +12,15 @@ from app.engine.feature_engineering.cashflow.engineer import CashFlowFeatureEngi
 from app.engine.feature_engineering.financial_position.engineer import (
     FinancialPositionFeatureEngineer,
 )
+
+from app.engine.assessors.operations.assessor import (
+    OperationsAssessor,
+)
+
+from app.engine.feature_engineering.operations.engineer import (
+    OperationsFeatureEngineer,
+)
+
 from app.engine.models.assessment_result import AssessmentResult
 from app.engine.models.component_score import ComponentScore
 from app.engine.models.derived_features import DerivedFeatures
@@ -31,6 +40,8 @@ class AssessmentPipeline:
         self._financial_position_assessor = FinancialPositionAssessor()
         self._compliance_engineer = ComplianceFeatureEngineer()
         self._compliance_assessor = ComplianceAssessor()
+        self._operations_engineer = OperationsFeatureEngineer()
+        self._operations_assessor = OperationsAssessor()
 
     def assess(
         self,
@@ -74,7 +85,19 @@ class AssessmentPipeline:
                     compliance_features
                 )
             )
+        if request.operations is not None:
 
+            operations_features = (
+                self._operations_engineer.transform(
+                    request.operations
+                )
+            )
+
+            results.append(
+                self._operations_assessor.assess(
+                    operations_features
+                )
+            )
         if len(results) == 1:
             return results[0]
 
