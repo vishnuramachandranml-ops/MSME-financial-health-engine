@@ -21,6 +21,14 @@ from app.engine.feature_engineering.operations.engineer import (
     OperationsFeatureEngineer,
 )
 
+from app.engine.assessors.alternate_data.assessor import (
+    AlternateDataAssessor,
+)
+
+from app.engine.feature_engineering.alternate_data.engineer import (
+    AlternateDataFeatureEngineer,
+)
+
 from app.engine.models.assessment_result import AssessmentResult
 from app.engine.models.component_score import ComponentScore
 from app.engine.models.derived_features import DerivedFeatures
@@ -42,6 +50,8 @@ class AssessmentPipeline:
         self._compliance_assessor = ComplianceAssessor()
         self._operations_engineer = OperationsFeatureEngineer()
         self._operations_assessor = OperationsAssessor()
+        self._alternate_data_engineer = AlternateDataFeatureEngineer()
+        self._alternate_data_assessor = AlternateDataAssessor()
 
     def assess(
         self,
@@ -96,6 +106,20 @@ class AssessmentPipeline:
             results.append(
                 self._operations_assessor.assess(
                     operations_features
+                )
+            )
+
+        if request.alternate_data is not None:
+
+            alternate_features = (
+                self._alternate_data_engineer.transform(
+                    request.alternate_data
+                )
+            )
+
+            results.append(
+                self._alternate_data_assessor.assess(
+                    alternate_features
                 )
             )
         if len(results) == 1:
