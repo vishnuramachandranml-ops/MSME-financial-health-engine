@@ -7,6 +7,7 @@ from app.models.enums import AssessmentStatus, RiskLevel
 from app.engine.models.component_score import ComponentScore
 from app.llm.models import LLMAnalysis
 from app.models.component_breakdown import ComponentBreakdown
+from app.models.simulation_inputs import SimulationInputs
 
 class AssessmentSummary(AppBaseModel):
     financial_health_score: float | None = None
@@ -45,4 +46,8 @@ class AssessmentResponse(AppBaseModel):
     default_factory=list,
     )
 
+    simulation_inputs: SimulationInputs | None = None
+
     llm_analysis: LLMAnalysis | None = None
+
+    
