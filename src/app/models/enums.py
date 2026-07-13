@@ -9,7 +9,7 @@ class AssessmentStatus(str, Enum):
 
 class RiskLevel(str, Enum):
     EXCELLENT = "EXCELLENT"
-    LOW = "LOW"
+    LOW = "LOW RISK"
     MEDIUM = "MEDIUM"
     HIGH = "HIGH"
     CRITICAL = "CRITICAL"
