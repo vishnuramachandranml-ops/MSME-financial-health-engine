@@ -31,6 +31,8 @@ from app.models.simulation_inputs import (
     SimulationInputs,
 )
 
+from app.engine.decision.decision_engine import DecisionEngine
+
 
 def build_assessment_response(
     request: AssessmentRequest,
@@ -51,10 +53,50 @@ def build_assessment_response(
         recommendations=recommendations,
     )
 
+    score = result.component.score
+
+    requested_amount = (
+        request.loan_request.requested_amount
+        if request.loan_request
+        else 0
+    )
+
+    credit_decision = DecisionEngine.credit_decision(
+        score
+    )
+
+    suggested_amount = DecisionEngine.suggested_loan_amount(
+        score,
+        requested_amount,
+    )
+
+    loan_min, loan_max = DecisionEngine.loan_limit_range(
+        suggested_amount
+    )
+
     summary = AssessmentSummary(
-        financial_health_score=result.component.score,
+
+        financial_health_score=score,
+
         risk_level=risk_level,
+
         confidence_score=result.component.confidence,
+
+        credit_decision=credit_decision,
+
+        suggested_loan_amount=suggested_amount,
+
+        loan_limit_min=loan_min,
+
+        loan_limit_max=loan_max,
+
+        monitoring_frequency=DecisionEngine.monitoring_frequency(
+            score
+        ),
+
+        risk_grade=DecisionEngine.risk_grade(
+            score
+        ),
     )
 
     component_breakdown = []
