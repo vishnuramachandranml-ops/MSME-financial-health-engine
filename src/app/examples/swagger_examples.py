@@ -129,3 +129,60 @@ HIGH_RISK_MANUFACTURING["financial_position"]["current_assets"]=2500000
 HIGH_RISK_MANUFACTURING["financial_position"]["current_liabilities"]=5000000
 HIGH_RISK_MANUFACTURING["alternate_data"]["average_bank_balance"]=80000
 HIGH_RISK_MANUFACTURING["alternate_data"]["positive_bank_statement_months"]=4
+
+
+WHAT_IF_CASHFLOW = {
+    "original_request": HEALTHY_MANUFACTURING,
+    "scenario": {
+        "cashflow": {
+            "revenue_growth": 35,
+            "collection_days": 45,
+        }
+    },
+}
+
+WHAT_IF_FINANCIAL_POSITION = {
+    "original_request": HEALTHY_MANUFACTURING,
+    "scenario": {
+        "financial_position": {
+            "current_ratio": 2.0,
+            "working_capital": 7500000,
+        }
+    },
+}
+
+WHAT_IF_COMPLIANCE = {
+    "original_request": MEDIUM_RISK_MANUFACTURING,
+    "scenario": {
+        "compliance": {
+            "gst_filing_rate": 100,
+            "epfo_compliance_rate": 100,
+            "tax_delay_days": 0,
+        }
+    },
+}
+
+WHAT_IF_ALL = {
+    "original_request": MEDIUM_RISK_MANUFACTURING,
+    "scenario": {
+        "cashflow": {
+            "revenue_growth": 35,
+            "collection_days": 45,
+        },
+        "financial_position": {
+            "current_ratio": 2.0,
+            "working_capital": 7500000,
+        },
+        "operations": {
+            "capacity_utilization": 95,
+        },
+        "compliance": {
+            "gst_filing_rate": 100,
+            "epfo_compliance_rate": 100,
+        },
+        "alternate_data": {
+            "digital_payment_ratio": 95,
+            "average_bank_balance": 5000000,
+        },
+    },
+}

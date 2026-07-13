@@ -21,7 +21,6 @@ class FinancialPositionSimulation(AppBaseModel):
 class OperationsSimulation(AppBaseModel):
     sales_growth: float | None = None
     capacity_utilization: float | None = None
-    operational_efficiency: float | None = None
 
 
 class ComplianceSimulation(AppBaseModel):
