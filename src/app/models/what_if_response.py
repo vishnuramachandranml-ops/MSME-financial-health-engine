@@ -4,6 +4,7 @@ from pydantic import Field
 
 from app.models.base import AppBaseModel
 from app.models.assessment_response import AssessmentResponse
+from app.models.simulation import Simulation
 
 
 class ComponentDelta(AppBaseModel):
@@ -64,3 +65,5 @@ class WhatIfResponse(AppBaseModel):
     )
 
     comparison_summary: str | None = None
+
+    simulation: Simulation | None = None

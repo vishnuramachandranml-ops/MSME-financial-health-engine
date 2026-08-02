@@ -109,65 +109,6 @@ class WhatIfService:
                 scenario.collection_days
             )
 
-    def _apply_cashflow(
-        self,
-        request: AssessmentRequest,
-        scenario: CashFlowSimulation | None,
-    ) -> None:
-
-        if (
-            scenario is None
-            or request.cashflow is None
-        ):
-            return
-
-        revenue = request.cashflow.monthly_revenue.values
-        expenses = request.cashflow.monthly_expenses.values
-
-        # -------------------------------
-        # Revenue Growth
-        # -------------------------------
-        if scenario.revenue_growth is not None:
-
-            revenue = self._generate_revenue_series(
-                first_value=revenue[0],
-                target_growth=scenario.revenue_growth,
-                periods=len(revenue),
-            )
-
-            request.cashflow.monthly_revenue.values = revenue
-
-        # -------------------------------
-        # Operating Margin takes precedence
-        # over Expense Ratio
-        # -------------------------------
-        if scenario.operating_margin is not None:
-
-            expenses = self._generate_expense_from_margin(
-                revenue,
-                scenario.operating_margin,
-            )
-
-            request.cashflow.monthly_expenses.values = expenses
-
-        elif scenario.expense_ratio is not None:
-
-            expenses = self._generate_expense_from_ratio(
-                revenue,
-                scenario.expense_ratio,
-            )
-
-            request.cashflow.monthly_expenses.values = expenses
-
-        # -------------------------------
-        # Collection Days
-        # -------------------------------
-        if scenario.collection_days is not None:
-
-            request.cashflow.average_collection_days = (
-                scenario.collection_days
-            )
-
     def _generate_revenue_series(
         self,
         first_value: float,
