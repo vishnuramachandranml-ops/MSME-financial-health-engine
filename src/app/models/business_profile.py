@@ -44,6 +44,18 @@ class BusinessProfile(AppBaseModel):
         description="Official Udyam registration number.",
     )
 
+    gstin: str | None = Field(
+        default=None,
+        description="GST Identification Number, when available.",
+        examples=["29ABCDE1234F1Z5"],
+    )
+
+    cin: str | None = Field(
+        default=None,
+        description="Corporate Identification Number, when applicable.",
+        examples=["U29299KA2016PTC081234"],
+    )
+    
     business_age_years: int = Field(
         ...,
         ge=0,

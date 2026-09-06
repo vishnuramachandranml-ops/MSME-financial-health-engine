@@ -32,6 +32,7 @@ from app.models.simulation_inputs import (
 )
 
 from app.engine.decision.decision_engine import DecisionEngine
+from app.api.alternate_data_builder import AlternateDataBuilder
 
 
 def build_assessment_response(
@@ -141,6 +142,10 @@ def build_assessment_response(
 
     derived = result.derived_features.values
 
+    alternate_data_cards = AlternateDataBuilder().build(
+        component_breakdown
+    )
+
     simulation_inputs = SimulationInputs(
 
         cashflow=CashFlowSimulation(
@@ -243,6 +248,8 @@ def build_assessment_response(
 
         request_id=request.metadata.request_id,
 
+        business_profile=request.business_profile,
+
         status=AssessmentStatus.SUCCESS,
 
         summary=summary,
@@ -262,4 +269,6 @@ def build_assessment_response(
         simulation_inputs=simulation_inputs,
 
         llm_analysis=llm_analysis,
+
+        alternate_data_cards=alternate_data_cards,
     )

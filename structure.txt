@@ -1,0 +1,534 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 0000022B DACA:11D0
+C:\USERS\VISHN\DOCUMENTS\CODEX\2026-07-08\GITHUB-PLUGIN-GITHUB-OPENAI-CURATED-REMOTE\MSME-FINANCIAL-HEALTH-ENGINE\SRC\APP
+¦   main.py
+¦   __init__.py
+¦   
++---api
+¦   ¦   middleware.py
+¦   ¦   response_builder.py
+¦   ¦   router.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---routers
+¦   ¦   ¦   assessment.py
+¦   ¦   ¦   health.py
+¦   ¦   ¦   version.py
+¦   ¦   ¦   what_if.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           assessment.cpython-312.pyc
+¦   ¦           assessment.cpython-313.pyc
+¦   ¦           health.cpython-312.pyc
+¦   ¦           health.cpython-313.pyc
+¦   ¦           version.cpython-312.pyc
+¦   ¦           version.cpython-313.pyc
+¦   ¦           what_if.cpython-313.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           middleware.cpython-312.pyc
+¦           response_builder.cpython-313.pyc
+¦           router.cpython-312.pyc
+¦           router.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---core
+¦   ¦   config_loader.py
+¦   ¦   constants.py
+¦   ¦   logger.py
+¦   ¦   settings.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           config_loader.cpython-312.pyc
+¦           constants.cpython-312.pyc
+¦           logger.cpython-312.pyc
+¦           logger.cpython-313.pyc
+¦           settings.cpython-312.pyc
+¦           settings.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---engine
+¦   +---aggregation
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           
+¦   +---assessors
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---alternate_data
+¦   ¦   ¦   ¦   assessor.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           assessor.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---cashflow
+¦   ¦   ¦   ¦   assessor.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           assessor.cpython-312.pyc
+¦   ¦   ¦           assessor.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-312.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---compliance
+¦   ¦   ¦   ¦   assessor.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           assessor.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---financial_position
+¦   ¦   ¦   ¦   assessor.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           assessor.cpython-312.pyc
+¦   ¦   ¦           assessor.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-312.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---operations
+¦   ¦   ¦   ¦   assessor.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           assessor.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---decision
+¦   ¦   ¦   decision_engine.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           decision_engine.cpython-313.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---evaluation
+¦   ¦   ¦   metric_evaluator.py
+¦   ¦   ¦   metric_result.py
+¦   ¦   ¦   metric_rule.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           metric_evaluator.cpython-312.pyc
+¦   ¦           metric_evaluator.cpython-313.pyc
+¦   ¦           metric_result.cpython-312.pyc
+¦   ¦           metric_result.cpython-313.pyc
+¦   ¦           metric_rule.cpython-312.pyc
+¦   ¦           metric_rule.cpython-313.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---exceptions
+¦   ¦   ¦   aggregation_exceptions.py
+¦   ¦   ¦   assessor_exceptions.py
+¦   ¦   ¦   feature_engineering_exceptions.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           aggregation_exceptions.cpython-312.pyc
+¦   ¦           assessor_exceptions.cpython-312.pyc
+¦   ¦           feature_engineering_exceptions.cpython-312.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           
+¦   +---explainability
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           
+¦   +---feature_engineering
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---alternate_data
+¦   ¦   ¦   ¦   calculator.py
+¦   ¦   ¦   ¦   constants.py
+¦   ¦   ¦   ¦   engineer.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           calculator.cpython-313.pyc
+¦   ¦   ¦           engineer.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---cashflow
+¦   ¦   ¦   ¦   calculator.py
+¦   ¦   ¦   ¦   constants.py
+¦   ¦   ¦   ¦   engineer.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           calculator.cpython-312.pyc
+¦   ¦   ¦           calculator.cpython-313.pyc
+¦   ¦   ¦           constants.cpython-312.pyc
+¦   ¦   ¦           engineer.cpython-312.pyc
+¦   ¦   ¦           engineer.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-312.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---compliance
+¦   ¦   ¦   ¦   calculator.py
+¦   ¦   ¦   ¦   constants.py
+¦   ¦   ¦   ¦   engineer.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           calculator.cpython-313.pyc
+¦   ¦   ¦           constants.cpython-313.pyc
+¦   ¦   ¦           engineer.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---financial_position
+¦   ¦   ¦   ¦   calculator.py
+¦   ¦   ¦   ¦   constants.py
+¦   ¦   ¦   ¦   engineer.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           calculator.cpython-312.pyc
+¦   ¦   ¦           calculator.cpython-313.pyc
+¦   ¦   ¦           constants.cpython-312.pyc
+¦   ¦   ¦           constants.cpython-313.pyc
+¦   ¦   ¦           engineer.cpython-312.pyc
+¦   ¦   ¦           engineer.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-312.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---operations
+¦   ¦   ¦   ¦   calculator.py
+¦   ¦   ¦   ¦   constants.py
+¦   ¦   ¦   ¦   engineer.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           calculator.cpython-313.pyc
+¦   ¦   ¦           engineer.cpython-313.pyc
+¦   ¦   ¦           __init__.cpython-313.pyc
+¦   ¦   ¦           
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---interfaces
+¦   ¦   ¦   base_aggregator.py
+¦   ¦   ¦   base_assessor.py
+¦   ¦   ¦   base_feature_engineer.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           base_aggregator.cpython-312.pyc
+¦   ¦           base_assessor.cpython-312.pyc
+¦   ¦           base_assessor.cpython-313.pyc
+¦   ¦           base_feature_engineer.cpython-312.pyc
+¦   ¦           base_feature_engineer.cpython-313.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---models
+¦   ¦   ¦   alternate_data_features.py
+¦   ¦   ¦   assessment_context.py
+¦   ¦   ¦   assessment_result.py
+¦   ¦   ¦   cashflow_features.py
+¦   ¦   ¦   compliance_features.py
+¦   ¦   ¦   component_assessment.py
+¦   ¦   ¦   component_score.py
+¦   ¦   ¦   derived_features.py
+¦   ¦   ¦   financial_position_features.py
+¦   ¦   ¦   operations_features.py
+¦   ¦   ¦   score_breakdown.py
+¦   ¦   ¦   signal.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           alternate_data_features.cpython-313.pyc
+¦   ¦           alternate_features.cpython-312.pyc
+¦   ¦           assessment_context.cpython-312.pyc
+¦   ¦           assessment_response.cpython-312.pyc
+¦   ¦           assessment_result.cpython-312.pyc
+¦   ¦           assessment_result.cpython-313.pyc
+¦   ¦           cashflow_features.cpython-312.pyc
+¦   ¦           cashflow_features.cpython-313.pyc
+¦   ¦           compliance_features.cpython-312.pyc
+¦   ¦           compliance_features.cpython-313.pyc
+¦   ¦           component_assessment.cpython-313.pyc
+¦   ¦           component_score.cpython-312.pyc
+¦   ¦           component_score.cpython-313.pyc
+¦   ¦           derived_features.cpython-312.pyc
+¦   ¦           derived_features.cpython-313.pyc
+¦   ¦           financial_position_features.cpython-312.pyc
+¦   ¦           financial_position_features.cpython-313.pyc
+¦   ¦           operations_features.cpython-312.pyc
+¦   ¦           operations_features.cpython-313.pyc
+¦   ¦           score_breakdown.cpython-312.pyc
+¦   ¦           signal.cpython-312.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---recommendations
+¦   ¦   ¦   recommendation_engine.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           recommendation_engine.cpython-313.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---risk
+¦   ¦   ¦   constants.py
+¦   ¦   ¦   risk_classifier.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           constants.cpython-313.pyc
+¦   ¦           risk_classifier.cpython-313.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---scorecards
+¦   ¦   ¦   alternate_data_scorecard.py
+¦   ¦   ¦   cashflow_scorecard.py
+¦   ¦   ¦   compliance_scorecard.py
+¦   ¦   ¦   financial_position_scorecard.py
+¦   ¦   ¦   operations_scorecard.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           alternate_data_scorecard.cpython-313.pyc
+¦   ¦           cashflow_scorecard.cpython-312.pyc
+¦   ¦           cashflow_scorecard.cpython-313.pyc
+¦   ¦           compliance_scorecard.cpython-313.pyc
+¦   ¦           financial_position_scorecard.cpython-312.pyc
+¦   ¦           financial_position_scorecard.cpython-313.pyc
+¦   ¦           operations_scorecard.cpython-313.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---scoring
+¦       ¦   confidence_calculator.py
+¦       ¦   score_mapper.py
+¦       ¦   weighted_scorer.py
+¦       ¦   __init__.py
+¦       ¦   
+¦       +---__pycache__
+¦               confidence_calculator.cpython-312.pyc
+¦               score_mapper.cpython-312.pyc
+¦               score_mapper.cpython-313.pyc
+¦               weighted_scorer.cpython-312.pyc
+¦               weighted_scorer.cpython-313.pyc
+¦               __init__.cpython-312.pyc
+¦               __init__.cpython-313.pyc
+¦               
++---examples
+¦   ¦   healthy_manufacturing.json
+¦   ¦   high_risk_manufacturing.json
+¦   ¦   medium_risk_manufacturing.json
+¦   ¦   new_to_credit.json
+¦   ¦   swagger_examples.py
+¦   ¦   
+¦   +---__pycache__
+¦           swagger_examples.cpython-313.pyc
+¦           
++---llm
+¦   ¦   gemini_client.py
+¦   ¦   models.py
+¦   ¦   prompt_builder.py
+¦   ¦   summary_service.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           gemini_client.cpython-313.pyc
+¦           models.cpython-313.pyc
+¦           prompt_builder.cpython-313.pyc
+¦           summary_service.cpython-313.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---models
+¦   ¦   alternate_data.py
+¦   ¦   alternate_data_card.py
+¦   ¦   assessment_request.py
+¦   ¦   assessment_response.py
+¦   ¦   base.py
+¦   ¦   business_profile.py
+¦   ¦   cashflow.py
+¦   ¦   compliance.py
+¦   ¦   component_breakdown.py
+¦   ¦   credit_decision.py
+¦   ¦   enums.py
+¦   ¦   financial_position.py
+¦   ¦   loan_request.py
+¦   ¦   monitoring_frequency.py
+¦   ¦   operations.py
+¦   ¦   simulation.py
+¦   ¦   simulation_inputs.py
+¦   ¦   value_objects.py
+¦   ¦   what_if_request.py
+¦   ¦   what_if_response.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---common
+¦   ¦   ¦   metadata.py
+¦   ¦   ¦   warning.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           metadata.cpython-312.pyc
+¦   ¦           warning.cpython-312.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           alternate_data.cpython-312.pyc
+¦           alternate_data.cpython-313.pyc
+¦           assessment_request.cpython-312.pyc
+¦           assessment_request.cpython-313.pyc
+¦           assessment_response.cpython-312.pyc
+¦           assessment_response.cpython-313.pyc
+¦           base.cpython-312.pyc
+¦           base.cpython-313.pyc
+¦           business_profile.cpython-312.pyc
+¦           business_profile.cpython-313.pyc
+¦           cashflow.cpython-312.pyc
+¦           cashflow.cpython-313.pyc
+¦           compliance.cpython-312.pyc
+¦           compliance.cpython-313.pyc
+¦           component_breakdown.cpython-313.pyc
+¦           credit_decision.cpython-313.pyc
+¦           enums.cpython-312.pyc
+¦           enums.cpython-313.pyc
+¦           financial_position.cpython-312.pyc
+¦           financial_position.cpython-313.pyc
+¦           loan_request.cpython-312.pyc
+¦           loan_request.cpython-313.pyc
+¦           monitoring_frequency.cpython-313.pyc
+¦           operations.cpython-312.pyc
+¦           operations.cpython-313.pyc
+¦           simulation.cpython-313.pyc
+¦           simulation_inputs.cpython-313.pyc
+¦           value_objects.cpython-312.pyc
+¦           value_objects.cpython-313.pyc
+¦           what_if_request.cpython-313.pyc
+¦           what_if_response.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---pipelines
+¦   ¦   assessment_pipeline.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           assessment_pipeline.cpython-312.pyc
+¦           assessment_pipeline.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---services
+¦   ¦   assessment_service.py
+¦   ¦   what_if_service.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           assessment_service.cpython-312.pyc
+¦           what_if_service.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---simulation
+¦   ¦   assessment_comparison_builder.py
+¦   ¦   utils.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           assessment_comparison_builder.cpython-313.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---tests
+¦   ¦   test_assessment_pipeline_compliance.py
+¦   ¦   test_assessment_pipeline_financial_position.py
+¦   ¦   test_cashflow_calculator.py
+¦   ¦   test_compliance_assessor.py
+¦   ¦   test_compliance_calculator.py
+¦   ¦   test_financial_position_assessor.py
+¦   ¦   test_financial_position_calculator.py
+¦   ¦   test_score_mapper.py
+¦   ¦   test_weighted_scorer.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---feature_engineering
+¦   ¦   ¦   test_cashflow_engineer.py
+¦   ¦   ¦   test_compliance_engineer.py
+¦   ¦   ¦   test_financial_position_engineer.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           test_cashflow_engineer.cpython-312-pytest-9.1.1.pyc
+¦   ¦           test_cashflow_engineer.cpython-312.pyc
+¦   ¦           test_cashflow_engineer.cpython-313-pytest-9.1.1.pyc
+¦   ¦           test_compliance_engineer.cpython-313-pytest-9.1.1.pyc
+¦   ¦           test_financial_position_engineer.cpython-312-pytest-9.1.1.pyc
+¦   ¦           test_financial_position_engineer.cpython-312.pyc
+¦   ¦           test_financial_position_engineer.cpython-313-pytest-9.1.1.pyc
+¦   ¦           __init__.cpython-312.pyc
+¦   ¦           __init__.cpython-313.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           test_assessment_pipeline_compliance.cpython-313-pytest-9.1.1.pyc
+¦           test_assessment_pipeline_financial_position.cpython-312-pytest-9.1.1.pyc
+¦           test_assessment_pipeline_financial_position.cpython-312.pyc
+¦           test_assessment_pipeline_financial_position.cpython-313-pytest-9.1.1.pyc
+¦           test_cashflow_calculator.cpython-312-pytest-9.1.1.pyc
+¦           test_cashflow_calculator.cpython-312.pyc
+¦           test_cashflow_calculator.cpython-313-pytest-9.1.1.pyc
+¦           test_compliance_assessor.cpython-313-pytest-9.1.1.pyc
+¦           test_compliance_calculator.cpython-313-pytest-9.1.1.pyc
+¦           test_financial_position_assessor.cpython-312-pytest-9.1.1.pyc
+¦           test_financial_position_assessor.cpython-312.pyc
+¦           test_financial_position_assessor.cpython-313-pytest-9.1.1.pyc
+¦           test_financial_position_calculator.cpython-312-pytest-9.1.1.pyc
+¦           test_financial_position_calculator.cpython-312.pyc
+¦           test_financial_position_calculator.cpython-313-pytest-9.1.1.pyc
+¦           test_score_mapper.cpython-312-pytest-9.1.1.pyc
+¦           test_score_mapper.cpython-312.pyc
+¦           test_score_mapper.cpython-313-pytest-9.1.1.pyc
+¦           test_weighted_scorer.cpython-312-pytest-9.1.1.pyc
+¦           test_weighted_scorer.cpython-312.pyc
+¦           test_weighted_scorer.cpython-313-pytest-9.1.1.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---utils
+¦   ¦   math_utils.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           math_utils.cpython-312.pyc
+¦           math_utils.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---validators
+¦   ¦   input_validator.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           input_validator.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---__pycache__
+        main.cpython-312.pyc
+        main.cpython-313.pyc
+        __init__.cpython-312.pyc
+        __init__.cpython-313.pyc
+        

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
+from app.models.alternate_data_card import AlternateDataCard
 from app.models.base import AppBaseModel
 from app.engine.models.component_score import ComponentScore
 from app.llm.models import LLMAnalysis
@@ -12,7 +13,7 @@ from app.models.enums import (
     RiskLevel)
 from app.models.credit_decision import CreditDecision
 from app.models.monitoring_frequency import MonitoringFrequency
-
+from app.models.business_profile import BusinessProfile
 class AssessmentSummary(AppBaseModel):
     financial_health_score: float | None = None
     
@@ -39,6 +40,8 @@ class AssessmentResponse(AppBaseModel):
     status: AssessmentStatus
 
     summary: AssessmentSummary
+
+    business_profile: BusinessProfile
 
     component_scores: list[ComponentScore] = Field(
         default_factory=list
@@ -67,5 +70,9 @@ class AssessmentResponse(AppBaseModel):
     simulation_inputs: SimulationInputs | None = None
 
     llm_analysis: LLMAnalysis | None = None
+
+    alternate_data_cards: list[AlternateDataCard] = Field(
+        default_factory=list,
+    )
 
     

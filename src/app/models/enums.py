@@ -34,3 +34,12 @@ class CollateralType(str, Enum):
     VEHICLE = "VEHICLE"
     INVENTORY = "INVENTORY"
     NONE = "NONE"
+
+class AlternateDataStatus(str, Enum):
+    """
+    Qualitative status for alternate data cards.
+    """
+    EXCELLENT = "Excellent"
+    GOOD = "Good"
+    AVERAGE = "Average"
+    NEEDS_IMPROVEMENT = "Needs Improvement"
